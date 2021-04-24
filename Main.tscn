@@ -14,30 +14,6 @@ shortcut = SubResource( 1 )
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
 
-[node name="WalkButton" type="Button" parent="."]
-margin_left = 31.7479
-margin_top = 23.811
-margin_right = 186.748
-margin_bottom = 43.811
-toggle_mode = true
-shortcut = SubResource( 2 )
-text = "Toggle Walking"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ReturnButton" type="Button" parent="."]
-margin_left = 212.712
-margin_top = 23.811
-margin_right = 377.712
-margin_bottom = 43.811
-toggle_mode = true
-shortcut = SubResource( 2 )
-text = "Return People to Center"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Map" type="TileMap" parent="."]
 mode = 1
 tile_set = ExtResource( 3 )
