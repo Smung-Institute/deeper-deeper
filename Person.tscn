@@ -48,12 +48,15 @@ radius = 11.3231
 height = 0.0
 
 [node name="Person" type="RigidBody2D"]
+collision_layer = 3
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

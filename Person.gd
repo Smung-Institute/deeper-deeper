@@ -14,6 +14,16 @@ export var rotation_rate = 20
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	linear_velocity = Vector2(1,0) * speed
+	connect("body_entered", self, "_handle_body_entered")
+	
+func _handle_body_entered(body):
+	if body.is_in_group("bat"):
+		die()
+	if body.is_in_group("poison"):
+		die()
+		
+func die():
+	print("I died  ")
 
 func _physics_process(delta):
 	linear_velocity = linear_velocity.normalized() * speed
@@ -26,6 +36,8 @@ func _physics_process(delta):
 #		velocity = Vector2(0,0)
 		$DirectionalArrow.hide()
 	rotation = 0
+	
+	$AnimatedSprite.scale.x = -sign(linear_velocity.x)
 #	move(delta)
 	
 	
