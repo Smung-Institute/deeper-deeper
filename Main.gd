@@ -9,8 +9,7 @@ var screensize = Vector2(600,400)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$WalkButton.connect("toggled", self, "_on_walkbutton_toggled")
-	$ReturnButton.connect("pressed", self, "on_returnbutton_pressed")
+	$MarginContainer/HBoxContainer/WalkButton.connect("toggled", self, "_on_walkbutton_toggled")
 	$Person1.is_controlled = false
 	$Person2.is_controlled = true
 	
@@ -30,7 +29,7 @@ func _process(delta):
 func _on_walkbutton_toggled(buttonbool):
 	$Person1.is_controlled = buttonbool
 	$Person2.is_controlled = !buttonbool
-
-func _on_returnbutton_pressed():
-	$Person1.position = Vector2(300,300)
-	$Person2.position = Vector2(600,300)
+#
+#func _on_returnbutton_pressed():
+#	$Person1.position = Vector2(300,300)
+#	$Person2.position = Vector2(600,300)

@@ -14,30 +14,6 @@ shortcut = SubResource( 1 )
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
 
-[node name="WalkButton" type="Button" parent="."]
-margin_left = 31.7479
-margin_top = 23.811
-margin_right = 186.748
-margin_bottom = 43.811
-toggle_mode = true
-shortcut = SubResource( 2 )
-text = "Toggle Walking"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ReturnButton" type="Button" parent="."]
-margin_left = 212.712
-margin_top = 23.811
-margin_right = 377.712
-margin_bottom = 43.811
-toggle_mode = true
-shortcut = SubResource( 2 )
-text = "Return People to Center"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Map" type="TileMap" parent="."]
 mode = 1
 tile_set = ExtResource( 3 )
@@ -56,3 +32,40 @@ position = Vector2( -8.97974, 85.3071 )
 [node name="Person2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 454.501, 369.042 )
 rotation_rate = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 984.0
+margin_bottom = 20.0
+
+[node name="WalkButton" type="Button" parent="MarginContainer/HBoxContainer"]
+margin_right = 107.0
+margin_bottom = 20.0
+toggle_mode = true
+shortcut = SubResource( 2 )
+text = "Toggle Walking"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer"]
+margin_left = 111.0
+margin_right = 111.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Panel"]
+margin_right = 462.0
+margin_bottom = 14.0
+text = "Press space or this button to switch ppl. Use WASD or arrow keys to rotate."
+__meta__ = {
+"_edit_use_anchors_": false
+}
