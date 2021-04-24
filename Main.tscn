@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Person.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://CaveTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Bat.tscn" type="PackedScene" id=4]
 
 [sub_resource type="InputEventAction" id=1]
 action = "\"ui_accept\""
@@ -48,6 +49,9 @@ tile_data = PoolIntArray( -2424819, 1, 0, -2424818, 1, 0, -2424817, 1, 0, -24248
 [node name="Person1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 596.719, 314.645 )
 rotation_rate = 6
+
+[node name="Bat" parent="." instance=ExtResource( 4 )]
+position = Vector2( -8.97974, 85.3071 )
 
 [node name="Person2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 454.501, 369.042 )
