@@ -2,29 +2,32 @@ extends RigidBody2D
 
 
 # Declare member variables here. Examples:
-# var a = 2
+# var a = 2a
 # var b = "text"
 
 var is_controlled = true
 var direction = Vector2(1,0)
 export var speed = 100
 var velocity = Vector2(0,0)
-export var rotation_rate = 2
+export var rotation_rate = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	velocity = Vector2(1,0) * speed
+	linear_velocity = Vector2(1,0) * speed
 
-func _process(delta):
+func _physics_process(delta):
+	linear_velocity = linear_velocity.normalized() * speed
 	if is_controlled:
 		$DirectionalArrow.show()
 		rotate_arrow()
 		rotate_velocity(delta)
-		direction = velocity.normalized()
+		direction = linear_velocity.normalized()
 	else:
 #		velocity = Vector2(0,0)
 		$DirectionalArrow.hide()
-	move(delta)
+	rotation = 0
+#	move(delta)
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -32,13 +35,13 @@ func _process(delta):
 
 func rotate_velocity(delta):
 	if Input.is_action_pressed("keyboard_left"):
-		velocity= velocity.rotated(-rotation_rate*delta)
+		linear_velocity= linear_velocity.rotated(-rotation_rate*delta)
 	if Input.is_action_pressed("keyboard_right"):
-		velocity= velocity.rotated(rotation_rate*delta)
+		linear_velocity= linear_velocity.rotated(rotation_rate*delta)
 
-func move(delta):
-#	direction = velocity.normalized()
-	position += velocity * delta
+#func move(delta):
+##	direction = velocity.normalized()
+#	position += velocity * delta
 
 #func move():
 #	var direction = Vector2(0,0)
@@ -57,4 +60,4 @@ func move(delta):
 ##		is_walking = false
 
 func rotate_arrow():
-	$DirectionalArrow.rotation = velocity.angle()
+	$DirectionalArrow.rotation = linear_velocity.angle()

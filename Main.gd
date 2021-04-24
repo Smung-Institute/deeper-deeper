@@ -15,6 +15,7 @@ func _ready():
 	$Person2.is_controlled = true
 	
 func _process(delta):
+	Camera2D.position = $Person1.position
 	if Input.is_action_just_pressed("ui_accept"):
 		$Person1.is_controlled = !$Person1.is_controlled
 		$Person2.is_controlled = !$Person2.is_controlled

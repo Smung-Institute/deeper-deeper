@@ -7,7 +7,6 @@ radius = 20.3406
 height = 56.679
 
 [node name="Person" type="RigidBody2D"]
-mass = 10.0
 gravity_scale = 0.0
 script = ExtResource( 1 )
 
