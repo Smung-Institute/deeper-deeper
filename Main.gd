@@ -1,35 +1,43 @@
 extends Node
 
-var screensize = Vector2(600,400)
+var screensize = Vector2(300,400)
+onready var world = $MarginContainer/HBoxContainer2/Viewports/ViewportContainerL/Viewport/GameWorld
+onready var worldmap = world.get_node("Map")
+onready var playerl = world.get_node("Map/Person1")
+onready var playerr = world.get_node("Map/Person2")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var viewportr = get_node("MarginContainer/HBoxContainer2/Viewports/ViewportContainerR/Viewport")
+onready var viewportl = get_node("MarginContainer/HBoxContainer2/Viewports/ViewportContainerL/Viewport")
 
+onready var camerar = viewportr.get_node("Camera2DR")
+onready var cameral = viewportl.get_node("Camera2DL")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$MarginContainer/HBoxContainer/WalkButton.connect("toggled", self, "_on_walkbutton_toggled")
-	$Person1.is_controlled = false
-	$Person2.is_controlled = true
+	world = viewportl.find_world_2d()
+	viewportr.world_2d = world
+	playerl.is_controlled = false
+	playerr.is_controlled = true
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		$Person1.is_controlled = !$Person1.is_controlled
-		$Person2.is_controlled = !$Person2.is_controlled
-	clamp($Person1.position.x, 0, screensize.x)
-	clamp($Person2.position.x, 0, screensize.x)
-	clamp($Person1.position.y, 0, screensize.y)
-	clamp($Person2.position.y, 0, screensize.y)
+		playerl.is_controlled = !playerl.is_controlled
+		playerr.is_controlled = !playerr.is_controlled
+#	playerl.position.x = clamp(playerl.position.x, 0, screensize.x)
+#	playerr.position.x = clamp(playerr.position.x, 0, screensize.x)
+#	playerl.position.y = clamp(playerl.position.y, 0, screensize.y)
+	cameral.position = playerl.position
+	camerar.position = playerr.position
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 func _on_walkbutton_toggled(buttonbool):
-	$Person1.is_controlled = buttonbool
-	$Person2.is_controlled = !buttonbool
+	playerl.is_controlled = buttonbool
+	playerr.is_controlled = !buttonbool
 #
 #func _on_returnbutton_pressed():
-#	$Person1.position = Vector2(300,300)
-#	$Person2.position = Vector2(600,300)
+#	playerl.position = Vector2(300,300)
+#	playerr.position = Vector2(600,300)
