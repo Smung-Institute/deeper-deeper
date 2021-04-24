@@ -13,6 +13,7 @@ export var rotation_rate = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("players")
 	linear_velocity = Vector2(1,0) * speed
 	connect("body_entered", self, "_handle_body_entered")
 	
