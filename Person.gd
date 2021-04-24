@@ -18,13 +18,16 @@ func _ready():
 	connect("body_entered", self, "_handle_body_entered")
 	
 func _handle_body_entered(body):
+	print("collided")
 	if body.is_in_group("bat"):
+		die()
+	if body.is_in_group("fireball"):
 		die()
 	if body.is_in_group("poison"):
 		die()
 		
 func die():
-	print("I died  ")
+	print("I died")
 
 func _physics_process(delta):
 	linear_velocity = linear_velocity.normalized() * speed
