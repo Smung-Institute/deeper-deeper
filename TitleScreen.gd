@@ -39,7 +39,12 @@ func _on_fade_finished():
 	$Fader.hide()
 	
 func _on_storybotton_pressed():
-	story_audio.play()
+	if story_audio.playing:
+		story_audio.stop()
+		storybutton.text = "STORY"
+	else:
+		story_audio.play()
+		storybutton.text = "SHUT UP"
 	
 func _on_creditsbotton_pressed():
 	credits_audio.play()
