@@ -50,7 +50,7 @@ func _process(delta):
 #	camerar.position = playerr.position
 	
 func _on_win():	
-	winscene = packedwinscene.new()
+	winscene = packedwinscene.instance()
 	add_child(winscene)
 
 func _on_beginbutton_pressed():

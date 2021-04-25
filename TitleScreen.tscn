@@ -1,10 +1,9 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
 [ext_resource path="res://assets/mountain.png" type="Texture" id=3]
 [ext_resource path="res://assets/player_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/story.mp3" type="AudioStream" id=5]
 [ext_resource path="res://assets/credits.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/deeper_intro.wav" type="AudioStream" id=7]
 
@@ -242,7 +241,6 @@ scale = Vector2( 0.240896, 0.240896 )
 texture = ExtResource( 3 )
 
 [node name="Story" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
 
 [node name="Credits" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
