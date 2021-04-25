@@ -37,8 +37,12 @@ func _process(delta):
 #	playerl.position.x = clamp(playerl.position.x, 0, screensize.x)
 #	playerr.position.x = clamp(playerr.position.x, 0, screensize.x)
 #	playerl.position.y = clamp(playerl.position.y, 0, screensize.y)
-	cameral.position = playerl.position
+	cameral.position = playerl.position + Vector2(-100,200)
 	camerar.position = playerr.position
+	
+#func _physics_process(delta):
+#	cameral.position = playerl.position
+#	camerar.position = playerr.position
 	
 	
 func _on_beginbutton_pressed():
