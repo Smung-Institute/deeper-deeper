@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GameWorld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://WinScreen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MarginContainer.gd" type="Script" id=5]
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
+packedwinscene = ExtResource( 3 )
 
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -122,6 +124,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "PUSH"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BeginButton" type="Button" parent="StartPanel"]
 margin_left = 206.152

@@ -7,6 +7,9 @@ extends RigidBody2D
 
 signal playerhere
 signal playerleft
+signal win
+
+var playersnear = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,10 +28,15 @@ func _on_WinArea_exited(body):
 		
 
 func _on_playerhere():
-	print("player is near chalice!")
+	print("a player is near chalice!")
+	playersnear += 1
+	if playersnear > 1:
+		emit_signal("win")
+		
 	
 func _on_playerleft():
-	print("player has left the chalice!")
+	playersnear -= 1
+	print("a player has left the chalice!")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
