@@ -15,6 +15,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LeftFocus" type="ColorRect" parent="."]
+margin_left = 2.0
+margin_top = 25.0
+margin_right = 515.0
+margin_bottom = 596.0
+color = Color( 1, 0.254902, 0.847059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightFocus" type="ColorRect" parent="."]
+margin_left = 511.602
+margin_top = 26.0595
+margin_right = 1024.6
+margin_bottom = 597.059
+color = Color( 1, 0.254902, 0.847059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0

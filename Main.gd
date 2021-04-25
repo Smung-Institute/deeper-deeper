@@ -15,6 +15,8 @@ onready var camerar = viewportr.get_node("Camera2DR")
 onready var cameral = viewportl.get_node("Camera2DL")
 
 func _ready():
+	$LeftFocus.hide()
+	$RightFocus.show()
 	pausebutton.disabled = true
 	pausebutton.connect("pressed", self, "_on_pausebutton_pressed")
 	beginbutton.connect("pressed", self, "_on_beginbutton_pressed")
@@ -30,6 +32,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		playerl.is_controlled = !playerl.is_controlled
 		playerr.is_controlled = !playerr.is_controlled
+		$RightFocus.visible = !$RightFocus.visible
+		$LeftFocus.visible = !$LeftFocus.visible
 #	playerl.position.x = clamp(playerl.position.x, 0, screensize.x)
 #	playerr.position.x = clamp(playerr.position.x, 0, screensize.x)
 #	playerl.position.y = clamp(playerl.position.y, 0, screensize.y)
@@ -48,7 +52,7 @@ func _on_beginbutton_pressed():
 func _on_walkbutton_toggled(buttonbool):
 	playerl.is_controlled = buttonbool
 	playerr.is_controlled = !buttonbool
-#
+
 
 func _on_pausebutton_pressed():
 	get_tree().paused = !get_tree().paused
