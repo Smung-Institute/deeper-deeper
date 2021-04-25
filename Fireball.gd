@@ -9,6 +9,8 @@ func _ready():
 	velocity_vector.x = velocity_vector.x * scale.x
 	
 func _handle_body_entered(body):
+	if body.is_in_group("players"):
+		body._handle_body_entered(self)
 	queue_free()
 	
 func _process(delta):

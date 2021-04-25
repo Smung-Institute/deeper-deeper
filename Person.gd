@@ -18,7 +18,6 @@ func _ready():
 	connect("body_entered", self, "_handle_body_entered")
 	
 func _handle_body_entered(body):
-	print("collided")
 	if body.is_in_group("bat"):
 		die()
 	if body.is_in_group("fireball"):
