@@ -11,79 +11,79 @@
 [sub_resource type="StyleBoxFlat" id=1]
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 64, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 192, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 256, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 320, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 384, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 4 )
 region = Rect2( 448, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 256, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 320, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 384, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 448, 0, 64, 128 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "player_1",
+"name": "player_2",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
-"name": "player_2",
+"name": "player_1",
 "speed": 5.0
 } ]
 
@@ -93,7 +93,7 @@ script = ExtResource( 1 )
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0.380392, 0.247059, 1 )
+color = Color( 0.67451, 0.196078, 0.196078, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,7 +134,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/HBoxContainer/Panel2"]
-position = Vector2( 838.672, -38.3813 )
+position = Vector2( 159.929, 264.277 )
 scale = Vector2( 7, 7 )
 frames = SubResource( 18 )
 animation = "player_2"
@@ -174,7 +174,7 @@ margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
+[node name="StoryButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel4"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -197,7 +197,7 @@ margin_bottom = 278.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel5"]
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Panel5"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -219,7 +219,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/HBoxContainer/Panel"]
-position = Vector2( -477.124, -38.6033 )
+position = Vector2( 170.148, 264.553 )
 scale = Vector2( 7, 7 )
 frames = SubResource( 18 )
 animation = "player_1"

@@ -24,8 +24,8 @@ func _ready():
 	pausebutton.disabled = true
 	pausebutton.connect("pressed", self, "_on_pausebutton_pressed")
 	beginbutton.connect("pressed", self, "_on_beginbutton_pressed")
-	world = viewportl.find_world_2d()
-	viewportr.world_2d = world
+	var world_2d = viewportl.find_world_2d()
+	viewportr.world_2d = world_2d
 	playerl.is_controlled = false
 	playerr.is_controlled = true
 	cameral.position = playerl.position
@@ -33,7 +33,7 @@ func _ready():
 	get_tree().paused = true
 	
 func _process(delta):
-	world.get_node("$Map/MagicChalice").connect("win", self, "_on_win")
+	worldmap.get_node("MagicChalice").connect("win", self, "_on_win")
 	if Input.is_action_just_pressed("ui_accept"):
 		playerl.is_controlled = !playerl.is_controlled
 		playerr.is_controlled = !playerr.is_controlled
