@@ -115,50 +115,30 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="StartPanel"]
-margin_left = -2058.67
-margin_top = -105.99
-margin_right = -1601.67
-margin_bottom = 31.0101
-rect_scale = Vector2( 10, 15 )
+margin_left = 37.7937
+margin_top = 16.2063
+margin_right = 421.794
+margin_bottom = 135.206
 size_flags_horizontal = 3
 size_flags_vertical = 6
-text = "PUSH"
+text = "In his last letter to his brother Deeper, Deeper proposed a MEETING deep within the mountain cave. The brothers are to meet at the GOLDEN CHALICE at the center of the cave.
+
+Press LEFT and RIGHT to steer Deeper or Deeper
+Press SPACE to switch control between Deeper and Deeper
+Press DOWN to drop a torch"
 align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BeginButton" type="Button" parent="StartPanel"]
-margin_left = 206.152
-margin_top = 75.9898
-margin_right = 320.152
-margin_bottom = 95.9898
-rect_scale = Vector2( 0.7, 0.7 )
+margin_left = 153.927
+margin_top = 158.309
+margin_right = 303.927
+margin_bottom = 198.309
 size_flags_horizontal = 5
-text = "here"
+text = "START"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Label2" type="Label" parent="StartPanel"]
-margin_left = -295.749
-margin_top = 85.2339
-margin_right = -188.749
-margin_bottom = 99.2339
-rect_scale = Vector2( 10, 30 )
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "to start"
-align = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="StartPanel"]
-margin_left = 409.787
-margin_top = 205.268
-margin_right = 477.787
-margin_bottom = 219.268
-rect_scale = Vector2( 0.6, 0.6 )
-text = "THEG AME"
