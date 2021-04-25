@@ -15,6 +15,7 @@ onready var tween = $Fader/Tween
 
 onready var story_audio = $Story
 onready var credits_audio = $Credits
+onready var title_audio = $Title
 
 onready var game_scene_path = "res://Main.tscn"
 
@@ -34,6 +35,7 @@ func _ready():
 	startbutton.connect("pressed", self, "_on_startbutton_pressed")
 	storybutton.connect("pressed", self, "_on_storybotton_pressed")
 	creditsbutton.connect("pressed", self, "_on_creditsbotton_pressed")
+	title_audio.play()
 	
 func _on_fade_finished():
 	$Fader.hide()
