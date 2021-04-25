@@ -6,6 +6,10 @@ onready var worldmap = world.get_node("Map")
 onready var playerl = world.get_node("Map/Person1")
 onready var playerr = world.get_node("Map/Person2")
 
+var winscenepath = "res://WinScreen.tscn"
+export (PackedScene) var packedwinscene
+var winscene
+
 onready var viewportr = get_node("MarginContainer/HBoxContainer2/Viewports/ViewportContainerR/Viewport")
 onready var viewportl = get_node("MarginContainer/HBoxContainer2/Viewports/ViewportContainerL/Viewport")
 onready var pausebutton = $MarginContainer/HBoxContainer2/PauseButton
@@ -29,6 +33,7 @@ func _ready():
 	get_tree().paused = true
 	
 func _process(delta):
+	world.get_node("$Map/MagicChalice").connect("win", self, "_on_win")
 	if Input.is_action_just_pressed("ui_accept"):
 		playerl.is_controlled = !playerl.is_controlled
 		playerr.is_controlled = !playerr.is_controlled
@@ -44,7 +49,10 @@ func _process(delta):
 #	cameral.position = playerl.position
 #	camerar.position = playerr.position
 	
-	
+func _on_win():	
+	winscene = packedwinscene.new()
+	add_child(winscene)
+
 func _on_beginbutton_pressed():
 	get_tree().paused = false
 	pausebutton.disabled = false
