@@ -1,9 +1,6 @@
 extends RigidBody2D
 
-
-# Declare member variables here. Examples:
-# var a = 2a
-# var b = "text"
+var torch_scene = preload("res://Torch.tscn")
 
 var is_controlled = true
 var direction = Vector2(1,0)
@@ -16,6 +13,7 @@ func _ready():
 	add_to_group("players")
 	linear_velocity = Vector2(1,0) * speed
 	connect("body_entered", self, "_handle_body_entered")
+	$AnimatedSprite.animation = name
 	
 func _handle_body_entered(body):
 	if body.is_in_group("bat"):
@@ -27,6 +25,13 @@ func _handle_body_entered(body):
 		
 func die():
 	print("I died")
+
+func _process(delta):
+	if Input.is_action_just_pressed("keyboard_down"):
+		if is_controlled:
+			var torch = torch_scene.instance()
+			torch.position = position
+			get_parent().add_child(torch)	
 
 func _physics_process(delta):
 	linear_velocity = linear_velocity.normalized() * speed
