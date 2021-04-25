@@ -32,10 +32,11 @@ margin_right = 1004.0
 margin_bottom = 580.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer2"]
+[node name="PauseButton" type="Button" parent="MarginContainer/HBoxContainer2"]
+pause_mode = 2
 margin_right = 1004.0
 margin_bottom = 20.0
-text = "BUTTON"
+text = "PAUSE BUTTON"
 
 [node name="Viewports" type="HBoxContainer" parent="MarginContainer/HBoxContainer2"]
 margin_top = 24.0
@@ -76,3 +77,63 @@ render_target_update_mode = 3
 [node name="Camera2DR" type="Camera2D" parent="MarginContainer/HBoxContainer2/Viewports/ViewportContainerR/Viewport"]
 position = Vector2( 514, 34 )
 current = true
+
+[node name="StartPanel" type="Panel" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -83.0
+margin_right = 229.0
+margin_bottom = 130.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="StartPanel"]
+margin_left = -2058.67
+margin_top = -105.99
+margin_right = -1601.67
+margin_bottom = 31.0101
+rect_scale = Vector2( 10, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "PUSH"
+align = 1
+
+[node name="BeginButton" type="Button" parent="StartPanel"]
+margin_left = 206.152
+margin_top = 75.9898
+margin_right = 320.152
+margin_bottom = 95.9898
+rect_scale = Vector2( 0.7, 0.7 )
+size_flags_horizontal = 5
+text = "here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="StartPanel"]
+margin_left = -295.749
+margin_top = 85.2339
+margin_right = -188.749
+margin_bottom = 99.2339
+rect_scale = Vector2( 10, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "to start"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="StartPanel"]
+margin_left = 409.787
+margin_top = 205.268
+margin_right = 477.787
+margin_bottom = 219.268
+rect_scale = Vector2( 0.6, 0.6 )
+text = "THEG AME"

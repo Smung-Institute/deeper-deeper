@@ -56,7 +56,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -89,6 +89,7 @@ __meta__ = {
 
 [node name="DirectionalArrow" type="Area2D" parent="."]
 position = Vector2( 0, -21 )
+z_index = 100
 
 [node name="ColorRect" type="ColorRect" parent="DirectionalArrow"]
 margin_left = 61.0
